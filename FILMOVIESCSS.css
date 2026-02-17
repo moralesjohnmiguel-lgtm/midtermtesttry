@@ -1,3 +1,4 @@
+/* ================= GENERAL RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +10,10 @@ body {
     background: #ffffff;
     color: #2c2c2c;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
+/* ================= HEADER ================= */
 header {
     text-align: center;
     padding: 30px 20px;
@@ -21,6 +24,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* ================= NAVIGATION ================= */
 nav a {
     text-decoration: none;
     color: white;
@@ -29,34 +33,67 @@ nav a {
     margin: 0 8px;
     border-radius: 20px;
     font-size: 14px;
+    transition: 0.3s;
 }
 
+nav a:hover {
+    background: #5a6ee6;
+}
+
+/* ================= GENRE SECTION ================= */
 .genre-section {
     padding: 60px 40px;
 }
 
+.genre-section h2 {
+    margin-bottom: 30px;
+    border-left: 6px solid #4b5fd7;
+    padding-left: 12px;
+    color: #4b5fd7;
+}
+
+/* ================= CARD CONTAINER ================= */
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-bottom: 50px;
 }
 
-.movie-card {
+/* ================= SHOW CARD ================= */
+.show-card {
     background: #f5f5f5;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-.movie-card img {
+.show-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.show-card img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
+.show-card h3 {
+    color: #4b5fd7;
+    margin-bottom: 8px;
+}
+
+.show-card p {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* ================= VIDEO EMBED ================= */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     margin-top: 15px;
 }
@@ -71,6 +108,27 @@ nav a {
     border: none;
 }
 
+/* ================= BACK TO TOP BUTTON ================= */
+.top-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.top-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4b5fd7;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.top-btn:hover {
+    background-color: #5a6ee6;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
@@ -81,4 +139,16 @@ nav a {
     .card-container {
         grid-template-columns: 1fr;
     }
+
+    nav a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 11pt;
+    color: #5a6ee6;
 }
